@@ -25,19 +25,22 @@ EGIT_SUBMODULES=( '*' )
 #CONFIG_CHECK=""
 
 src_prepare() {
-	default
+	git-r3_fetch
+	git-r3_checkout
+	cmake-utils_src_prepare
 }
 
 src_compile() {
-	default
+	cmake-utils_src_configure
 }
 
 src_install() {
-	default
+	elog
+	elog "install **** bla"
 }
 
 pkg_postinst() {
 	elog
-	elog "!!!!!!!1bla!!!!!!!!!"
+	elog "postinstall **** bla"
 }
 
