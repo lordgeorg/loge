@@ -24,22 +24,42 @@ EGIT_SUBMODULES=( '*' )
 
 #CONFIG_CHECK=""
 
+CMAKE_MAKEFILE_GENERATOR="emake"
+
 src_prepare() {
-	git-r3_fetch
-	git-r3_checkout
+	# packaged patches:
+	#PATCHES=(
+	#)
+
+	# user patches:
+	epatch_user
+
+	# already includes epatch_user:
 	cmake-utils_src_prepare
 }
 
-src_compile() {
+src_configure() {
+	local mycmakeargs=(
+		-DWANT_INOTIFY="$(usex inotify True False)"
+		-DWANT_GPERFTOOLS_TCMALLOC="$(usex tcmalloc True False)"
+		-DWANT_GPERFTOOLS_PROFILER="$(usex profiling True False)"
+	)
+
 	cmake-utils_src_configure
 }
 
+src_compile() {
+	cmake-utils_src_compile
+}
+
+src_test() {
+	cmake-utils_src_test
+}
+
 src_install() {
-	elog
-	elog "install **** bla"
+	cmake-utils_src_install
 }
 
 pkg_postinst() {
-	elog
-	elog "postinstall **** bla"
+	elog "blaaaaaaaaaa"
 }
