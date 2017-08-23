@@ -43,4 +43,3 @@ pkg_postinst() {
 	elog
 	elog "postinstall **** bla"
 }
-
