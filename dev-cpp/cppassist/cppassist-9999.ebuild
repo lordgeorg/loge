@@ -5,21 +5,19 @@ EAPI=6
 
 inherit git-r3 cmake-utils
 
-DESCRIPTION="Tool for creating cmake-based projects"
-HOMEPAGE="https://github.com/lordgeorg/cmake-common"
+DESCRIPTION="stuff TODO"
+HOMEPAGE="https://github.com/cginternals/cppassist"
 #SRC_URI=""
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug static-libs"
+IUSE="debug"
 
-DEPEND="
-	>=dev-util/cmake-3.9
-	"
+DEPEND=""
 RDEPEND="${DEPEND}"
 
-EGIT_REPO_URI="https://github.com/lordgeorg/cmake-common.git"
+EGIT_REPO_URI="https://github.com/cginternals/cppassist.git"
 EGIT_BRANCH="master"
 EGIT_COMMIT="HEAD"
 EGIT_SUBMODULES=( '*' )
