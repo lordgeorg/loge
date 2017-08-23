@@ -29,12 +29,7 @@ EGIT_SUBMODULES=( '*' )
 CMAKE_MAKEFILE_GENERATOR="emake"
 
 src_prepare() {
-	# packaged patches:
-	#PATCHES=(
-	#)
-
-	# user patches:
-	epatch_user
+	#epatch
 
 	# already includes epatch_user:
 	cmake-utils_src_prepare
@@ -56,6 +51,5 @@ src_install() {
 	cmake-utils_src_install
 }
 
-pkg_postinst() {
-	default
-}
+#pkg_postinst() {
+#}

@@ -27,12 +27,8 @@ EGIT_SUBMODULES=( '*' )
 CMAKE_MAKEFILE_GENERATOR="emake"
 
 src_prepare() {
-	# packaged patches:
-	#PATCHES=(
-	#)
-
 	# user patches:
-	epatch_user
+	epatch "${FILESDIR}/${PV}/version-9999.patch"
 
 	# already includes epatch_user:
 	cmake-utils_src_prepare
@@ -52,8 +48,10 @@ src_test() {
 
 src_install() {
 	cmake-utils_src_install
+
+# fix multilib-strict QA failures
+	mv "${ED%/}"/usr/{lib,$(get_libdir)} || die
 }
 
-pkg_postinst() {
-	default
-}
+#pkg_postinst() {
+#}
