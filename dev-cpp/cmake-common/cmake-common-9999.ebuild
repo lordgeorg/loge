@@ -21,7 +21,8 @@ RDEPEND="${DEPEND}"
 
 EGIT_REPO_URI="https://github.com/lordgeorg/cmake-common.git"
 EGIT_BRANCH="master"
-EGIT_COMMIT="HEAD"
+# not set so that smart-live-rebuild recognize this package as a live one
+#EGIT_COMMIT="HEAD"
 EGIT_SUBMODULES=( '*' )
 
 #CONFIG_CHECK=""
