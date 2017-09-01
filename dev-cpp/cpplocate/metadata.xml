@@ -7,8 +7,6 @@
   </maintainer>
 
   <longdescription lang="en">
-cppassist is a collection of C++ functions, classes and libraries that are too small 
-to be standalone. It acts like a storage point for useful and reusable code for 
-everyone using C++. cppassist is a cross-platform library licenced under the MIT license.
+Cross-platform C++ library providing tools for applications to locate themselves, their data assets as well as dependent modules.
   </longdescription>
 </pkgmetadata>

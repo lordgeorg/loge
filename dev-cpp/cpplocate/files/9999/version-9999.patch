@@ -1,0 +1,31 @@
+From 25ed8cd6e12c3cd5790dfba5dd743d9476b23dce Mon Sep 17 00:00:00 2001
+From: Willy Scheibel <willy.scheibel@hpi.de>
+Date: Tue, 9 May 2017 15:09:47 +0200
+Subject: [PATCH] Apply cmake-init 6a6f30b38a1cee31ccac3f091816f28e0f6bce4b
+
+---
+ CMakeLists.txt                                                         | 2 +-
+ source/codegeneration/{template_msvc_api.in => template_msvc_api.h.in} | 0
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ rename source/codegeneration/{template_msvc_api.in => template_msvc_api.h.in} (100%)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 1c6fbfb..33b05fa 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -53,7 +53,7 @@ set(META_VERSION_PATCH       "0")
+ set(META_VERSION_REVISION    "${GIT_REV}")
+ set(META_VERSION             "${META_VERSION_MAJOR}.${META_VERSION_MINOR}.${META_VERSION_PATCH}")
+ set(META_NAME_VERSION        "${META_PROJECT_NAME} v${META_VERSION} (${META_VERSION_REVISION})")
+-set(META_CMAKE_INIT_SHA      "689c8a9a22a77848c15209fc155afc368e3b9b59")
++set(META_CMAKE_INIT_SHA      "6a6f30b38a1cee31ccac3f091816f28e0f6bce4b")
+ 
+ string(MAKE_C_IDENTIFIER ${META_PROJECT_NAME} META_PROJECT_ID)
+ string(TOUPPER ${META_PROJECT_ID} META_PROJECT_ID)
+diff --git a/source/codegeneration/template_msvc_api.in b/source/codegeneration/template_msvc_api.h.in
+similarity index 100%
+rename from source/codegeneration/template_msvc_api.in
+rename to source/codegeneration/template_msvc_api.h.in
+-- 
+2.14.1
+

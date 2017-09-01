@@ -5,20 +5,19 @@ EAPI=6
 
 inherit git-r3 cmake-utils
 
-DESCRIPTION="Tool for creating cmake-based projects."
-HOMEPAGE="https://github.com/lordgeorg/cmake-common"
+DESCRIPTION="Cross-platform C++ library providing tools for localization."
+HOMEPAGE="https://github.com/cginternals/cpplocate"
 #SRC_URI=""
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug static-libs"
+IUSE=""
 
-RDEPEND=""
-DEPEND="${RDEPEND}
-	>=dev-util/cmake-3.0"
+DEPEND=""
+RDEPEND="${DEPEND}"
 
-EGIT_REPO_URI="https://github.com/lordgeorg/cmake-common.git"
+EGIT_REPO_URI="https://github.com/cginternals/cpplocate.git"
 EGIT_BRANCH="master"
 # not set so that smart-live-rebuild recognize this package as a live one
 #EGIT_COMMIT="HEAD"
@@ -29,7 +28,8 @@ EGIT_SUBMODULES=( '*' )
 CMAKE_MAKEFILE_GENERATOR="emake"
 
 src_prepare() {
-	#epatch
+	# user patches:
+	epatch "${FILESDIR}/${PV}/version-9999.patch"
 
 	# already includes epatch_user:
 	cmake-utils_src_prepare
@@ -49,6 +49,9 @@ src_test() {
 
 src_install() {
 	cmake-utils_src_install
+
+# fix multilib-strict QA failures
+	mv "${ED%/}"/usr/{lib,$(get_libdir)} || die
 }
 
 #pkg_postinst() {

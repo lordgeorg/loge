@@ -5,14 +5,14 @@ EAPI=6
 
 inherit git-r3 cmake-utils
 
-DESCRIPTION="stuff TODO"
+DESCRIPTION="Small but powerful and frequently required, stand alone C++ features."
 HOMEPAGE="https://github.com/cginternals/cppassist"
 #SRC_URI=""
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug"
+IUSE=""
 
 DEPEND=""
 RDEPEND="${DEPEND}"
