@@ -12,13 +12,12 @@ HOMEPAGE="https://github.com/cginternals/glbinding"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="examples doc glfw qt5 glew"
+IUSE="examples doc glfw qt5 glew static-libs"
 
 #TODO cpplocate
 RDEPEND="
 	glew? ( >=media-libs/glew-1.6:* )
-	examples? ( glfw? ( >=media-libs/glfw-3.2:* ) )
-	examples? ( qt5? ( >=dev-qt/qtcore-5.1:5 >=dev-qt/qtgui-5.1:5 >=dev-qt/qtwidgets-5.1:5 ) )"
+	examples? ( dev-cpp/cpplocate:* glfw? ( >=media-libs/glfw-3.2:* ) qt5? ( >=dev-qt/qtcore-5.1:5 >=dev-qt/qtgui-5.1:5 >=dev-qt/qtwidgets-5.1:5 ) )"
 DEPEND="${RDEPEND}
 	>=dev-util/cmake-3.0
 	doc? ( >=app-doc/doxygen-1.8:* )"
