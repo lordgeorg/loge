@@ -7,14 +7,13 @@
   </maintainer>
 
   <longdescription lang="en">
-glbinding leverages modern C++11 features like enum classes, lambdas, and variadic templates, instead of relying on macros; all OpenGL symbols are real functions and variables. It provides type-safe parameters, per feature API header, lazy function resolution, multi-context and multi-thread support, global and local function callbacks, meta information about the generated OpenGL binding and the OpenGL runtime, as well as tools and examples for quick-starting your projects. Based on the OpenGL API specification (gl.xml) glbinding is generated using python scripts and templates that can be easily adapted to fit custom needs.
+globjects provides object-oriented interfaces to the OpenGL API (3.0 and higher). It reduces the amount of OpenGL code required for rendering and facilitates coherent OpenGL use by means of an additional abstraction layer to glbinding and GLM. Common rendering tasks and processes are automated and missing features of specific OpenGL drivers are partially simulated or even emulated at run-time.  
   </longdescription>
 
   <use>
      <flag name="examples">Build and install examples</flag>
      <flag name="glfw">Use glfw-based examples if flag examples is also set</flag>
      <flag name="qt5">Use qt5-based examples if flag examples is also set</flag>
-     <flag name="glew">Build and install GLEW performance comparision</flag>
      <flag name="doc">Create and install doxygen documentation</flag>
      <flag name="graphviz">Create diagrams in documentation using graphviz</flag>
   </use>
