@@ -1,0 +1,31 @@
+From 7872d1cea9a01b2846a492990e6de42f9b98c2a9 Mon Sep 17 00:00:00 2001
+From: lordgeorg <lordgeorg@googlemail.com>
+Date: Sat, 2 Sep 2017 14:48:10 +0200
+Subject: [PATCH] Sets version to 9999
+
+---
+ CMakeLists.txt | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 42e1cd2..9847942 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -54,11 +54,11 @@ set(META_PROJECT_DESCRIPTION "QML item library for cross-platform graphics appli
+ set(META_AUTHOR_ORGANIZATION "CG Internals GmbH")
+ set(META_AUTHOR_DOMAIN       "https://github.com/cginternals/qmltoolbox/")
+ set(META_AUTHOR_MAINTAINER   "opensource@cginternals.com")
+-set(META_VERSION_MAJOR       "1")
+-set(META_VERSION_MINOR       "1")
++set(META_VERSION_MAJOR       "9999")
++set(META_VERSION_MINOR       "0")
+ set(META_VERSION_PATCH       "0")
+ set(META_VERSION_REVISION    "${GIT_REV}")
+-set(META_VERSION             "${META_VERSION_MAJOR}.${META_VERSION_MINOR}.${META_VERSION_PATCH}")
++set(META_VERSION             "9999")
+ set(META_NAME_VERSION        "${META_PROJECT_NAME} v${META_VERSION} (${META_VERSION_REVISION})")
+ set(META_CMAKE_INIT_SHA      "6a6f30b38a1cee31ccac3f091816f28e0f6bce4b")
+ 
+-- 
+2.14.1
+

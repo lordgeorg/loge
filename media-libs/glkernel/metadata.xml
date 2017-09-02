@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="project">
+    <name>CG Internals</name>
+    <email>opensource@cginternals.com</email>
+  </maintainer>
+
+  <longdescription lang="en">
+C++ library for pre-computing noise, and random sample-kernels.
+  </longdescription>
+
+  <use>
+     <flag name="examples">Build and install examples</flag>
+     <flag name="doc">Create and install doxygen documentation</flag>
+  </use>
+</pkgmetadata>
