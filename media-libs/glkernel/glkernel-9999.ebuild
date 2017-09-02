@@ -53,9 +53,6 @@ src_test() {
 
 src_install() {
 	cmake-utils_src_install
-
-# fix multilib-strict QA failures
-	mv "${ED%/}"/usr/{lib,$(get_libdir)} || die
 }
 
 #pkg_postinst() {
