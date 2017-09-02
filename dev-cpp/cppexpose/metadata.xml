@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="project">
+    <name>CG Internals</name>
+    <email>opensource@cginternals.com</email>
+  </maintainer>
+
+  <longdescription lang="en">
+cppexpose is a C++11 library that provides tools for introspection of types, properties, and classes. This allows for a C++ program to expose its interfaces into runtime, making it possible to, e.g., create automatic GUI representations for interfaces, or to expose them into a scripting environment.
+  </longdescription>
+
+  <use>
+     <flag name="examples">Build and install examples</flag>
+     <flag name="test">Build and perform tests</flag>
+     <flag name="c++11">Use c++11 stdregex instead of boost implementation</flag>
+     <flag name="doc">Create and install doxygen documentation</flag>
+  </use>
+</pkgmetadata>
