@@ -1,21 +1,21 @@
-From c60e50229a5b439136f4fbf32907b364f8a2390c Mon Sep 17 00:00:00 2001
+From a563cdd6c169c944e1ab1a6f571cf3b2ceabd7f5 Mon Sep 17 00:00:00 2001
 From: lordgeorg <lordgeorg@googlemail.com>
-Date: Wed, 23 Aug 2017 12:56:37 +0200
-Subject: [PATCH] format to 9999
+Date: Thu, 22 Feb 2018 15:08:12 +0100
+Subject: [PATCH] portage overlay patch
 
 ---
  CMakeLists.txt | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index c759ed3..6093acb 100644
+index f7ed26e..6093acb 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -47,11 +47,11 @@ set(META_PROJECT_DESCRIPTION "C++ sanctuary for small but powerful and frequentl
  set(META_AUTHOR_ORGANIZATION "CG Internals GmbH")
  set(META_AUTHOR_DOMAIN       "https://github.com/cginternals/cppassist/")
  set(META_AUTHOR_MAINTAINER   "opensource@cginternals.com")
--set(META_VERSION_MAJOR       "0")
+-set(META_VERSION_MAJOR       "1")
 +set(META_VERSION_MAJOR       "9999")
  set(META_VERSION_MINOR       "0")
  set(META_VERSION_PATCH       "0")
@@ -26,5 +26,5 @@ index c759ed3..6093acb 100644
  set(META_CMAKE_INIT_SHA      "6a6f30b38a1cee31ccac3f091816f28e0f6bce4b")
  
 -- 
-2.14.1
+2.16.2
 

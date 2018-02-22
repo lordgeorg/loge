@@ -1,14 +1,14 @@
-From 6874f0eb93807ea3d25a681dacf4c01d7a9e737d Mon Sep 17 00:00:00 2001
+From b9f96f4622e565c3ce0d839090f1ff95b30ffe2e Mon Sep 17 00:00:00 2001
 From: lordgeorg <lordgeorg@googlemail.com>
-Date: Sat, 2 Sep 2017 14:58:52 +0200
-Subject: [PATCH] Sets version to 9999
+Date: Thu, 22 Feb 2018 15:15:00 +0100
+Subject: [PATCH] version to 9999
 
 ---
  CMakeLists.txt | 6 +++---
  1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 3f7140e..021c8d3 100644
+index 7aeae81..03a965e 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -47,11 +47,11 @@ set(META_PROJECT_DESCRIPTION "GLM-based header-only C++ library for advanced sam
@@ -27,5 +27,5 @@ index 3f7140e..021c8d3 100644
  set(META_CMAKE_INIT_SHA      "6a6f30b38a1cee31ccac3f091816f28e0f6bce4b")
  
 -- 
-2.14.1
+2.16.2
 

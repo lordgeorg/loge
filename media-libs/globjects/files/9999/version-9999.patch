@@ -1,4 +1,4 @@
-From dcf5ea2064514575cd85d5078d65dd771236cfa5 Mon Sep 17 00:00:00 2001
+From 39c44994ba23635cbfd37c5b793aa79383471c05 Mon Sep 17 00:00:00 2001
 From: lordgeorg <lordgeorg@googlemail.com>
 Date: Fri, 1 Sep 2017 23:22:17 +0200
 Subject: [PATCH] Sets version to 9999
@@ -26,5 +26,5 @@ index fc43761d..44db0e39 100644
  set(META_CMAKE_INIT_SHA      "6a6f30b38a1cee31ccac3f091816f28e0f6bce4b")
  
 -- 
-2.14.1
+2.16.2
 
