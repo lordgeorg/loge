@@ -5,7 +5,7 @@ EAPI=6
 
 inherit git-r3 cmake-utils
 
-DESCRIPTION="Cross-platform C++ library providing tools for localization."
+DESCRIPTION="Cross-platform C++ library providing tools for localization"
 HOMEPAGE="https://github.com/cginternals/cpplocate"
 #SRC_URI=""
 

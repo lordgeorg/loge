@@ -5,7 +5,7 @@ EAPI=6
 
 inherit git-r3 cmake-utils
 
-DESCRIPTION="A C++ binding for the OpenGL API, generated using the gl.xml specification."
+DESCRIPTION="A C++ binding for the OpenGL API, generated using the gl.xml specification"
 HOMEPAGE="https://github.com/cginternals/glbinding"
 #SRC_URI=""
 

@@ -5,7 +5,7 @@ EAPI=6
 
 inherit git-r3 cmake-utils
 
-DESCRIPTION="C++ library strictly wrapping OpenGL objects."
+DESCRIPTION="C++ library strictly wrapping OpenGL objects"
 HOMEPAGE="https://github.com/cginternals/globjects"
 #SRC_URI=""
 

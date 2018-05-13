@@ -5,7 +5,7 @@ EAPI=6
 
 inherit git-r3 cmake-utils
 
-DESCRIPTION="QML item library for cross-platform graphics applications."
+DESCRIPTION="QML item library for cross-platform graphics applications"
 HOMEPAGE="https://github.com/cginternals/qmltoolbox"
 #SRC_URI=""
 

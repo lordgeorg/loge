@@ -5,7 +5,7 @@ EAPI=6
 
 inherit git-r3 cmake-utils
 
-DESCRIPTION="C++ library for type introspection, reflection, and scripting interface."
+DESCRIPTION="C++ library for type introspection, reflection, and scripting interface"
 HOMEPAGE="https://github.com/cginternals/cppexpose"
 #SRC_URI=""
 

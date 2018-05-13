@@ -5,7 +5,7 @@ EAPI=6
 
 inherit git-r3 cmake-utils
 
-DESCRIPTION="Small but powerful and frequently required, stand alone C++ features."
+DESCRIPTION="Small but powerful and frequently required, stand alone C++ features"
 HOMEPAGE="https://github.com/cginternals/cppassist"
 #SRC_URI=""
 
