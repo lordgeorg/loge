@@ -1,0 +1,22 @@
+From 617f84bb6c6a8a9fead075cb61de41fcae31028f Mon Sep 17 00:00:00 2001
+From: lordgeorg <lordgeorg@googlemail.com>
+Date: Sun, 20 May 2018 01:56:53 +0200
+Subject: [PATCH] "Fix" cmake installation problem
+
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 192e4d2..c3b2020 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -194,4 +194,4 @@ install(FILES LICENSE   DESTINATION ${INSTALL_ROOT} COMPONENT runtime)
+ install(FILES README.md DESTINATION ${INSTALL_ROOT} COMPONENT runtime)
+ 
+ # Install cmake functions
+-install(FILES cmake/ModuleInformation.cmake DESTINATION ${INSTALL_CMAKE} COMPONENT dev)
++#install(FILES cmake/ModuleInformation.cmake DESTINATION ${INSTALL_CMAKE} COMPONENT dev)
+-- 
+2.17.0
+
