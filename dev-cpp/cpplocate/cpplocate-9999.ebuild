@@ -30,7 +30,6 @@ CMAKE_MAKEFILE_GENERATOR="emake"
 src_prepare() {
 	# user patches:
 	epatch "${FILESDIR}/${PV}/0_version-9999.patch"
-	epatch "${FILESDIR}/${PV}/1_fix-install.patch"
 
 	# already includes epatch_user:
 	cmake-utils_src_prepare

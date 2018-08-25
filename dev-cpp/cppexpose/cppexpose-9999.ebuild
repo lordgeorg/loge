@@ -14,8 +14,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="examples test doc static-libs c++11"
 
-#TODO cpplocate
 RDEPEND="
+	dev-cpp/cpplocate:*
 	!c++11? ( dev-libs/boost:* )
 	examples? ( dev-cpp/cpplocate:* dev-cpp/cppassist:* )"
 DEPEND="${RDEPEND}
