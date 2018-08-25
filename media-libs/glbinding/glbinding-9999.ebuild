@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -12,19 +12,19 @@ HOMEPAGE="https://github.com/cginternals/glbinding"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="examples doc glfw qt5 glew static-libs graphviz"
+IUSE="examples doc static-libs test boost"
 
 #TODO cpplocate
 RDEPEND="
-	glew? ( >=media-libs/glew-1.6:* )
-	examples? ( dev-cpp/cpplocate:* glfw? ( >=media-libs/glfw-3.2:* ) qt5? ( >=dev-qt/qtcore-5.1:5 >=dev-qt/qtgui-5.1:5 >=dev-qt/qtwidgets-5.1:5 ) )"
+	>=media-libs/glew-1.6:*
+	examples? ( dev-cpp/cpplocate:* >=media-libs/glfw-3.2:* )"
 DEPEND="${RDEPEND}
 	>=dev-util/cmake-3.0
-	doc? ( >=app-doc/doxygen-1.8:* graphviz? ( media-gfx/graphviz:* ) )"
+	doc? ( >=app-doc/doxygen-1.8:* )"
 
 EGIT_REPO_URI="https://github.com/cginternals/glbinding.git"
 EGIT_BRANCH="master"
-# not set so that smart-live-rebuild recognize this package as a live one
+# not set so that smart-live-rebuild recognizes this package as a live one
 #EGIT_COMMIT="HEAD"
 EGIT_SUBMODULES=( '*' )
 
@@ -41,6 +41,16 @@ src_prepare() {
 }
 
 src_configure() {
+	local mycmakeargs=(
+		# currently no good use switch for this ... maybe minimal?
+		-DOPTION_BUILD_TOOLS=ON
+		-DOPTION_BUILD_EXAMPLES=$(usex examples)
+		-DOPTION_BUILD_DOCS=$(usex doc)
+		-DOPTION_BUILD_TESTS=$(usex test)
+		-DOPTION_BUILD_GPU_TESTS=$(usex test)
+		-DOPTION_BUILD_WITH_BOOST_THREADS=$(usex boost)
+	)
+
 	cmake-utils_src_configure
 }
 
