@@ -16,6 +16,7 @@ IUSE="examples test doc static-libs c++11"
 
 RDEPEND="
 	dev-cpp/cpplocate:*
+	dev-cpp/cppfs:*
 	!c++11? ( dev-libs/boost:* )
 	examples? ( dev-cpp/cpplocate:* dev-cpp/cppassist:* )"
 DEPEND="${RDEPEND}
