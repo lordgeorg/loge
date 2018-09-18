@@ -18,6 +18,7 @@ RDEPEND="
 	dev-cpp/cppexpose:*
 	dev-cpp/cppassist:*
 	dev-cpp/cpplocate:*
+	media-libs/glkernel:*
 	>=media-libs/glbinding-1.0.0:*
 	>=media-libs/glm-0.9.4:*
 	>=media-libs/globjects-0.3.2:*
