@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <name>CG internals</name>
+    <email>opensource@cginternals.com</email>
+  </maintainer>
+
+  <longdescription lang="en">
+cppfs is a cross-platform C++ library that provides an object-oriented abstraction for working with files and the file system. It can be used not only to access the local file system, but for remote and virtual file systems as well. By specializing the virtual backend interface, cppfs can be easily extended to support additional remote protocols or virtual file systems.
+  </longdescription>
+</pkgmetadata>
