@@ -1,14 +1,14 @@
-From b35d2dcc79be071dddcd4b2a6a01e419ff5cb608 Mon Sep 17 00:00:00 2001
+From 1239dfa96ac49f6354825239ac2342906de50aae Mon Sep 17 00:00:00 2001
 From: lordgeorg <lordgeorg@googlemail.com>
-Date: Sat, 25 Aug 2018 11:16:53 +0200
-Subject: [PATCH] Set version to 9999
+Date: Tue, 16 Oct 2018 13:09:40 +0200
+Subject: [PATCH] sets version to 9999
 
 ---
- CMakeLists.txt | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ CMakeLists.txt | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index cf1f409..542aaa2 100644
+index f7be977..edf2b92 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -48,11 +48,11 @@ set(META_PROJECT_DESCRIPTION "C++ Locator Library")
@@ -16,8 +16,9 @@ index cf1f409..542aaa2 100644
  set(META_AUTHOR_DOMAIN       "https://github.com/cginternals/cpplocate/")
  set(META_AUTHOR_MAINTAINER   "opensource@cginternals.com")
 -set(META_VERSION_MAJOR       "2")
+-set(META_VERSION_MINOR       "1")
 +set(META_VERSION_MAJOR       "9999")
- set(META_VERSION_MINOR       "0")
++set(META_VERSION_MINOR       "0")
  set(META_VERSION_PATCH       "0")
  set(META_VERSION_REVISION    "${GIT_REV}")
 -set(META_VERSION             "${META_VERSION_MAJOR}.${META_VERSION_MINOR}.${META_VERSION_PATCH}")
@@ -26,5 +27,5 @@ index cf1f409..542aaa2 100644
  set(META_CMAKE_INIT_SHA      "c472829f01df4c99c7bd3fa96bcf6854b3dd44f1")
  
 -- 
-2.18.0
+2.19.1
 
