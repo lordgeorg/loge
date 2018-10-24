@@ -11,7 +11,10 @@ C++ library for pre-computing noise, and random sample-kernels.
   </longdescription>
 
   <use>
-     <flag name="examples">Build and install examples</flag>
+     <flag name="benchmarks">Build and install benchmarks</flag>
      <flag name="doc">Create and install doxygen documentation</flag>
+     <flag name="examples">Build and install examples</flag>
+     <flag name="tests">Build and run unit tests</flag>
+     <flag name="tools">Build and install tools</flag>
   </use>
 </pkgmetadata>
