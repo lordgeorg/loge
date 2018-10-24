@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -22,6 +22,7 @@ RDEPEND="
 	>=media-libs/glbinding-1.0.0:*
 	>=media-libs/glm-0.9.4:*
 	>=media-libs/globjects-0.3.2:*
+	media-libs/openll:*
 	media-libs/qmltoolbox:*
 	glfw? ( >=media-libs/glfw-3.1:* )
 	qt5? ( >=dev-qt/qtcore-5.1:5 >=dev-qt/qtgui-5.1:5 >=dev-qt/qtwidgets-5.1:5 >=dev-qt/qtopengl-5.1:5 )

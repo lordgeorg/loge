@@ -12,7 +12,7 @@ HOMEPAGE="https://github.com/cginternals/glbinding"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="examples doc static-libs test boost"
+IUSE="boost doc examples static-libs tests tools"
 
 #TODO cpplocate
 RDEPEND="
@@ -42,13 +42,13 @@ src_prepare() {
 
 src_configure() {
 	local mycmakeargs=(
-		# currently no good use switch for this ... maybe minimal?
-		-DOPTION_BUILD_TOOLS=ON
+		-DOPTION_BUILD_TOOLS=$(usex tools)
 		-DOPTION_BUILD_EXAMPLES=$(usex examples)
 		-DOPTION_BUILD_DOCS=$(usex doc)
-		-DOPTION_BUILD_TESTS=$(usex test)
-		-DOPTION_BUILD_GPU_TESTS=$(usex test)
+		-DOPTION_BUILD_TESTS=$(usex tests)
+		-DOPTION_BUILD_GPU_TESTS=$(usex tests)
 		-DOPTION_BUILD_WITH_BOOST_THREADS=$(usex boost)
+		-DBUILD_SHARED_LIBS=$(usex static-libs OFF ON)
 	)
 
 	cmake-utils_src_configure

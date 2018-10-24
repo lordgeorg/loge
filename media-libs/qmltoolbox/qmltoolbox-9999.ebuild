@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -16,7 +16,7 @@ IUSE="examples doc static-libs"
 
 RDEPEND="
 	dev-cpp/cpplocate:*
-	media-libs/glm
+	>media-libs/glm-0.9:*
 	>=dev-qt/qtcore-5.4:5
 	examples? ( >=dev-qt/qtgui-5.4:5 >=dev-qt/qtwidgets-5.4:5 )"
 DEPEND="${RDEPEND}

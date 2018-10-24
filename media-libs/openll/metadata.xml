@@ -11,5 +11,7 @@ Open Label Library is an opensource, MIT licensed API specification for high per
   </longdescription>
 
   <use>
+     <flag name="examples">Build and install examples</flag>
+     <flag name="tests">Build and run unit tests</flag>
   </use>
 </pkgmetadata>

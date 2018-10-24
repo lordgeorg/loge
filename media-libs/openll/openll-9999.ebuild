@@ -12,10 +12,15 @@ HOMEPAGE="https://github.com/cginternals/openll"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="examples static-libs tests"
 
 #TODO cpplocate
-RDEPEND=""
+RDEPEND="
+	examples? ( dev-cpp/cpplocate:* >=media-libs/glfw-3.2:* )
+	>media-libs/glm-0.9:*
+	media-libs/glbinding:*
+	media-libs/globjects:*
+	"
 DEPEND="${RDEPEND}
 	>=dev-util/cmake-3.0"
 
@@ -38,6 +43,12 @@ src_prepare() {
 }
 
 src_configure() {
+	local mycmakeargs=(
+		-DOPTION_BUILD_EXAMPLES=$(usex examples)
+		-DOPTION_BUILD_TESTS=$(usex tests)
+		-DBUILD_SHARED_LIBS=$(usex static-libs OFF ON)
+	)
+
 	cmake-utils_src_configure
 }
 
