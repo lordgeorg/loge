@@ -1,14 +1,14 @@
-From 43df66f8be2a8ef954fff97e8cb8ef2f4577ac08 Mon Sep 17 00:00:00 2001
+From 0e7513b0e821261915443dd500a123f6aca97374 Mon Sep 17 00:00:00 2001
 From: lordgeorg <lordgeorg@googlemail.com>
-Date: Tue, 18 Sep 2018 08:16:58 +0200
-Subject: [PATCH] Set version to 9999
+Date: Wed, 31 Oct 2018 13:58:31 +0100
+Subject: [PATCH] sets version to 9999
 
 ---
  CMakeLists.txt | 6 +++---
  1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 0207507..d9642ad 100644
+index ea9fd15..d9642ad 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -46,11 +46,11 @@ set(META_PROJECT_DESCRIPTION "Cross-platform C++ file system library supporting
@@ -16,7 +16,7 @@ index 0207507..d9642ad 100644
  set(META_AUTHOR_DOMAIN       "https://github.com/cginternals/cppfs/")
  set(META_AUTHOR_MAINTAINER   "opensource@cginternals.com")
 -set(META_VERSION_MAJOR       "1")
--set(META_VERSION_MINOR       "1")
+-set(META_VERSION_MINOR       "2")
 +set(META_VERSION_MAJOR       "9999")
 +set(META_VERSION_MINOR       "0")
  set(META_VERSION_PATCH       "0")
@@ -27,5 +27,5 @@ index 0207507..d9642ad 100644
  set(META_CMAKE_INIT_SHA      "${GIT_SHA1}")
  
 -- 
-2.19.0
+2.19.1
 
