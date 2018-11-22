@@ -6,7 +6,7 @@ EAPI=6
 inherit git-r3 cmake-utils
 
 DESCRIPTION="API specification and reference implementations for glyph rendering in 2D and 3D"
-HOMEPAGE="https://github.com/cginternals/openll"
+HOMEPAGE="https://github.com/cginternals/openll-cpp"
 #SRC_URI=""
 
 LICENSE="MIT"
@@ -16,15 +16,17 @@ IUSE="examples static-libs tests"
 
 #TODO cpplocate
 RDEPEND="
-	examples? ( dev-cpp/cpplocate:* >=media-libs/glfw-3.2:* )
-	>media-libs/glm-0.9:*
+	examples? ( >=media-libs/glfw-3.2:* )
+	>media-libs/glm-0.9.8:*
+	dev-cpp/cppassist:*
+	dev-cpp/cppfs:*
+	dev-cpp/cpplocate:*
 	media-libs/glbinding:*
-	media-libs/globjects:*
-	"
+	media-libs/globjects:*"
 DEPEND="${RDEPEND}
 	>=dev-util/cmake-3.0"
 
-EGIT_REPO_URI="https://github.com/cginternals/openll.git"
+EGIT_REPO_URI="https://github.com/cginternals/openll-cpp.git"
 EGIT_BRANCH="master"
 # not set so that smart-live-rebuild recognize this package as a live one
 #EGIT_COMMIT="HEAD"
