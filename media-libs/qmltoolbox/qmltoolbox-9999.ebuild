@@ -18,6 +18,7 @@ RDEPEND="
 	dev-cpp/cpplocate:*
 	>media-libs/glm-0.9:*
 	>=dev-qt/qtcore-5.4:5
+	>=dev-qt/qtdeclarative-5.4:5
 	examples? ( >=dev-qt/qtgui-5.4:5 >=dev-qt/qtwidgets-5.4:5 )"
 DEPEND="${RDEPEND}
 	>=dev-util/cmake-3.0:*
