@@ -28,7 +28,7 @@ RDEPEND="
 	qt5? ( >=dev-qt/qtcore-5.1:5 >=dev-qt/qtgui-5.1:5 >=dev-qt/qtwidgets-5.1:5 >=dev-qt/qtopengl-5.1:5 )
 	ffmpeg? ( media-video/ffmpeg:* )
 	hidapi? ( dev-libs/hidapi:* )
-	examples? ( media-libs/glkernel:* )"
+	examples? ( media-libs/assimp:* )"
 DEPEND="${RDEPEND}
 	>=dev-util/cmake-3.0:*
 	doc? ( >=app-doc/doxygen-1.8:* )"
