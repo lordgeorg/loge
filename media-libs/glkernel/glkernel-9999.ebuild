@@ -21,7 +21,8 @@ DEPEND="${RDEPEND}
 	>=dev-util/cmake-3.0:*
 	doc? ( >=app-doc/doxygen-1.8:* )"
 
-EGIT_REPO_URI="https://github.com/cginternals/glkernel.git"
+# currently my fork
+EGIT_REPO_URI="https://github.com/lordgeorg/glkernel.git"
 EGIT_BRANCH="master"
 # not set so that smart-live-rebuild recognize this package as a live one
 #EGIT_COMMIT="HEAD"

@@ -28,12 +28,12 @@ RDEPEND="
 	qt5? ( >=dev-qt/qtcore-5.1:5 >=dev-qt/qtgui-5.1:5 >=dev-qt/qtwidgets-5.1:5 >=dev-qt/qtopengl-5.1:5 )
 	ffmpeg? ( media-video/ffmpeg:* )
 	hidapi? ( dev-libs/hidapi:* )
-	examples? ( media-libs/glkernel:* )"
+	examples? ( media-libs/assimp:* )"
 DEPEND="${RDEPEND}
 	>=dev-util/cmake-3.0:*
 	doc? ( >=app-doc/doxygen-1.8:* )"
 
-EGIT_REPO_URI="https://github.com/cginternals/gloperate.git"
+EGIT_REPO_URI="https://github.com/lordgeorg/gloperate.git"
 EGIT_BRANCH="master"
 # not set so that smart-live-rebuild recognize this package as a live one
 #EGIT_COMMIT="HEAD"
