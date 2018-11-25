@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <name>lordgeorg</name>
+    <email>lordgeorg@gmail.com</email>
+  </maintainer>
+
+  <use>
+     <flag name="qt5">Pulls dependencies needed for qt5-based ui</flag>
+     <flag name="doc">Pulls dependencies needed for documenation creation</flag>
+  </use>
+</pkgmetadata>
