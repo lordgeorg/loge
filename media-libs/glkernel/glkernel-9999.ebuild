@@ -16,7 +16,8 @@ IUSE="benchmarks doc examples tests tools static-libs"
 
 RDEPEND="
 	>=media-libs/glm-0.9.6:*
-	examples? ( >=dev-qt/qtcore-5.1:5 >=dev-qt/qtgui-5.1:5 >=dev-qt/qtwidgets-5.1:5 >=dev-qt/qtopengl-5.1:5 ) "
+	examples? ( >=dev-qt/qtcore-5.1:5 >=dev-qt/qtgui-5.1:5 >=dev-qt/qtwidgets-5.1:5 >=dev-qt/qtopengl-5.1:5 )
+	tools? ( media-libs/libpng:* ) "
 DEPEND="${RDEPEND}
 	>=dev-util/cmake-3.0:*
 	doc? ( >=app-doc/doxygen-1.8:* )"
