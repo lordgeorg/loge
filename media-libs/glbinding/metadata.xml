@@ -12,6 +12,7 @@
 
   <use>
      <flag name="boost">Use boost::thread instead of std::thread</flag>
+     <flag name="cppcheck">Enables source code check targets</flag>
      <flag name="doc">Create and install doxygen documentation</flag>
      <flag name="examples">Build and install examples</flag>
      <flag name="tests">Build and run unit tests</flag>

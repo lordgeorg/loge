@@ -16,5 +16,7 @@ globjects provides object-oriented interfaces to the OpenGL API (3.0 and higher)
      <flag name="qt5">Use qt5-based examples if flag examples is also set</flag>
      <flag name="doc">Create and install doxygen documentation</flag>
      <flag name="hidapi">Use hidapi ...</flag>
+     <flag name="tests">Build and run unit tests</flag>
+     <flag name="tools">Build and install auxiliary tools</flag>
   </use>
 </pkgmetadata>

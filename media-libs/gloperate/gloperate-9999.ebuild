@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -12,7 +12,7 @@ HOMEPAGE="https://github.com/cginternals/gloperate"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="examples doc glfw qt5 ffmpeg static-libs hidapi"
+IUSE="doc examples ffmpeg glfw hidapi qt5 static-libs tests tools"
 
 RDEPEND="
 	dev-cpp/cppexpose:*
@@ -52,6 +52,14 @@ src_prepare() {
 }
 
 src_configure() {
+	local mycmakeargs=(
+		-DOPTION_BUILD_TOOLS=$(usex tools)
+		-DOPTION_BUILD_EXAMPLES=$(usex examples)
+		-DOPTION_BUILD_DOCS=$(usex doc)
+		-DOPTION_BUILD_TESTS=$(usex tests)
+		-DBUILD_SHARED_LIBS=$(usex static-libs OFF ON)
+	)
+
 	cmake-utils_src_configure
 }
 

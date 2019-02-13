@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -12,7 +12,7 @@ HOMEPAGE="https://github.com/cginternals/glbinding"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="boost doc examples static-libs tests tools"
+IUSE="boost cppcheck doc examples static-libs tests tools"
 
 #TODO cpplocate
 RDEPEND="
@@ -20,7 +20,8 @@ RDEPEND="
 	examples? ( dev-cpp/cpplocate:* >=media-libs/glfw-3.2:* )"
 DEPEND="${RDEPEND}
 	>=dev-util/cmake-3.0
-	doc? ( >=app-doc/doxygen-1.8:* )"
+	doc? ( >=app-doc/doxygen-1.8:* )
+	cppcheck? ( dev-util/cppcheck:* )"
 
 EGIT_REPO_URI="https://github.com/cginternals/glbinding.git"
 EGIT_BRANCH="master"
@@ -42,12 +43,12 @@ src_prepare() {
 
 src_configure() {
 	local mycmakeargs=(
+		-DOPTION_BUILD_CHECK=$(usex cppcheck)
 		-DOPTION_BUILD_TOOLS=$(usex tools)
 		-DOPTION_BUILD_EXAMPLES=$(usex examples)
 		-DOPTION_BUILD_DOCS=$(usex doc)
 		-DOPTION_BUILD_TESTS=$(usex tests)
-		-DOPTION_BUILD_GPU_TESTS=$(usex tests)
-		-DOPTION_BUILD_WITH_BOOST_THREADS=$(usex boost)
+		-DOPTION_BUILD_WITH_BOOST_THREAD=$(usex boost)
 		-DBUILD_SHARED_LIBS=$(usex static-libs OFF ON)
 	)
 
