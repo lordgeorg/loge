@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -12,7 +12,7 @@ HOMEPAGE="https://github.com/cginternals/globjects"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="examples doc glfw qt5 graphviz static-libs"
+IUSE="examples doc glfw qt5 static-libs tests"
 
 #TODO cpplocate
 RDEPEND="
@@ -21,7 +21,7 @@ RDEPEND="
 	examples? ( dev-cpp/cpplocate:* glfw? ( >=media-libs/glfw-3.2:* ) qt5? ( >=dev-qt/qtcore-5.1:5 >=dev-qt/qtgui-5.1:5 >=dev-qt/qtwidgets-5.1:5 ) )"
 DEPEND="${RDEPEND}
 	>=dev-util/cmake-3.0:*
-	doc? ( >=app-doc/doxygen-1.8:* graphviz? ( media-gfx/graphviz:* ) )"
+	doc? ( >=app-doc/doxygen-1.8:* )"
 
 EGIT_REPO_URI="https://github.com/cginternals/globjects.git"
 EGIT_BRANCH="master"
@@ -39,6 +39,19 @@ src_prepare() {
 
 	# already includes epatch_user:
 	cmake-utils_src_prepare
+}
+
+src_configure() {
+	local mycmakeargs=(
+		-DOPTION_BUILD_EXAMPLES=$(usex examples)
+		-DOPTION_BUILD_DOCS=$(usex doc)
+		-DOPTION_BUILD_TESTS=$(usex tests)
+		-DOPTION_BUILD_GPU_TESTS=$(usex tests)
+		-DOPTION_ERRORS_AS_EXCEPTIONS=ON
+		-DBUILD_SHARED_LIBS=$(usex static-libs OFF ON)
+	)
+
+	cmake-utils_src_configure
 }
 
 src_configure() {
