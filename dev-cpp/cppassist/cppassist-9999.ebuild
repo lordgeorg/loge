@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -12,10 +12,11 @@ HOMEPAGE="https://github.com/cginternals/cppassist"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="doc examples static-libs tests"
 
-DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="
+	tests? ( dev-lang/python:* )"
+DEPEND="${RDEPEND}"
 
 EGIT_REPO_URI="https://github.com/cginternals/cppassist.git"
 EGIT_BRANCH="master"
@@ -36,6 +37,14 @@ src_prepare() {
 }
 
 src_configure() {
+	local mycmakeargs=(
+		-DOPTION_BUILD_EXAMPLES=$(usex examples)
+		-DOPTION_BUILD_DOCS=$(usex doc)
+		-DOPTION_BUILD_TESTS=$(usex tests)
+		-DOPTION_BUILD_WITH_STD_REGEX=ON
+		-DBUILD_SHARED_LIBS=$(usex static-libs OFF ON)
+)
+
 	cmake-utils_src_configure
 }
 

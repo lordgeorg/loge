@@ -2,5 +2,6 @@
 
 * Update project descriptions
 * Tell cmake spedifically not to build what is not activated by use flags
+  * cppassist with test has optional support for python -> add python flag?
 
 * Add software versions
