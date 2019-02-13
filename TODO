@@ -1,0 +1,6 @@
+* Add all cmake options (package specific: OPTION_[...])
+
+* Update project descriptions
+* Tell cmake spedifically not to build what is not activated by use flags
+
+* Add software versions
