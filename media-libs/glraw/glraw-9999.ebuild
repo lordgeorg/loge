@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -12,7 +12,7 @@ HOMEPAGE="https://github.com/cginternals/glraw"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test doc static-libs"
+IUSE="doc static-libs tests"
 
 RDEPEND="
 	>=dev-qt/qtcore-5.1:5 >=dev-qt/qtgui-5.1:5 >=dev-qt/qtwidgets-5.1:5 >=dev-qt/qtopengl-5.1:5"
@@ -39,6 +39,12 @@ src_prepare() {
 }
 
 src_configure() {
+	local mycmakeargs=(
+		-DBUILD_SHARED_LIBS=$(usex static-libs OFF ON)
+		-DOPTION_BUILD_DOCS=$(usex doc)
+		-DOPTION_BUILD_TESTS=$(usex tests)
+	)
+
 	cmake-utils_src_configure
 }
 
@@ -52,6 +58,9 @@ src_test() {
 
 src_install() {
 	cmake-utils_src_install
+
+# fix multilib-strict QA failures
+	mv "${ED%/}"/usr/{lib,$(get_libdir)} || die
 }
 
 #pkg_postinst() {

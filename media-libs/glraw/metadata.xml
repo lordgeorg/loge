@@ -11,7 +11,7 @@ glraw is an utility that converts Qt-supported images into an OpenGL-compatible 
   </longdescription>
 
   <use>
-     <flag name="test">Build the tests</flag>
-     <flag name="doc">Create and install doxygen documentation</flag>
+     <flag name="doc">Build doxygen documentation</flag>
+     <flag name="tests">Build the tests</flag>
   </use>
 </pkgmetadata>
