@@ -9,4 +9,11 @@
   <longdescription lang="en">
 cppfs is a cross-platform C++ library that provides an object-oriented abstraction for working with files and the file system. It can be used not only to access the local file system, but for remote and virtual file systems as well. By specializing the virtual backend interface, cppfs can be easily extended to support additional remote protocols or virtual file systems.
   </longdescription>
+
+  <use>
+    <flag name="doc">Build doxygen documentation</flag>
+    <flag name="examples">Build and install examples</flag>
+    <flag name="ssh">Build SSH backend</flag>
+    <flag name="tests">Build and run unit tests</flag>
+  </use>
 </pkgmetadata>
