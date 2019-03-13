@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -12,7 +12,7 @@ HOMEPAGE="https://github.com/cginternals/cppexpose"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="examples test doc static-libs c++11"
+IUSE="doc c++11 examples static-libs tests"
 
 RDEPEND="
 	dev-cpp/cpplocate:*
@@ -42,6 +42,14 @@ src_prepare() {
 }
 
 src_configure() {
+	local mycmakeargs=(
+		-DBUILD_SHARED_LIBS=$(usex static-libs OFF ON)
+		-DOPTION_BUILD_DOCS=$(usex doc)
+		-DOPTION_BUILD_EXAMPLES=$(usex examples)
+		-DOPTION_BUILD_TESTS=$(usex tests)
+		-DOPTION_BUILD_WITH_STD_REGEX=$(usex c++11)
+	)
+
 	cmake-utils_src_configure
 }
 

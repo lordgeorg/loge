@@ -5,14 +5,14 @@ EAPI=6
 
 inherit git-r3 cmake-utils
 
-DESCRIPTION="Cross-platform C++ library providing tools for localization"
+DESCRIPTION="Cross-platform C++ library providing localization tools"
 HOMEPAGE="https://github.com/cginternals/cpplocate"
 #SRC_URI=""
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="doc static-libs tests"
 
 RDEPEND=""
 DEPEND="${RDEPEND}"
@@ -36,6 +36,12 @@ src_prepare() {
 }
 
 src_configure() {
+	local mycmakeargs=(
+		-DOPTION_BUILD_DOCS=$(usex doc)
+		-DOPTION_BUILD_TESTS=$(usex tests)
+		-DBUILD_SHARED_LIBS=$(usex static-libs OFF ON)
+	)
+
 	cmake-utils_src_configure
 }
 

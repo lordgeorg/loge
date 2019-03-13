@@ -1,0 +1,42 @@
+From 960f659f32ee852e19fcd4dd17220d02cf0c1cf4 Mon Sep 17 00:00:00 2001
+From: lordgeorg <lordgeorg@googlemail.com>
+Date: Wed, 13 Mar 2019 00:59:38 +0100
+Subject: [PATCH] Adds FindGLM.cmake
+
+---
+ cmake/FindGLM.cmake | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
+ create mode 100644 cmake/FindGLM.cmake
+
+diff --git a/cmake/FindGLM.cmake b/cmake/FindGLM.cmake
+new file mode 100644
+index 0000000..8ee86a4
+--- /dev/null
++++ cmake/FindGLM.cmake
+@@ -0,0 +1,23 @@
++
++# GLM_FOUND
++# GLM_INCLUDE_DIR
++
++include(FindPackageHandleStandardArgs)
++
++FIND_PATH(GLM_INCLUDE_DIR glm/glm.hpp
++
++    PATHS
++    $ENV{GLM_DIR}
++    /usr
++    /usr/local
++    /sw
++    /opt/local
++
++	PATH_SUFFIXES
++    /include
++
++    DOC "The directory where glm/glm.hpp resides.")
++    
++find_package_handle_standard_args(GLM REQUIRED_VARS GLM_INCLUDE_DIR)
++
++mark_as_advanced(GLM_INCLUDE_DIR)
+-- 
+2.21.0
+

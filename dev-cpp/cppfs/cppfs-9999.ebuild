@@ -12,10 +12,14 @@ HOMEPAGE="https://github.com/cginternals/cppfs"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="doc examples ssh static-libs tests"
 
-RDEPEND=""
-DEPEND="${RDEPEND}"
+RDEPEND="
+	examples? ( dev-cpp/cppassist:* )
+	ssh? ( net-libs/libssh2 dev-libs/openssl:* sys-libs/zlib:* )"
+DEPEND="${RDEPEND}
+	>=dev-util/cmake-3.0
+	doc? ( >=app-doc/doxygen-1.8:* )"
 
 EGIT_REPO_URI="https://github.com/cginternals/cppfs.git"
 EGIT_BRANCH="master"
@@ -36,6 +40,14 @@ src_prepare() {
 }
 
 src_configure() {
+	local mycmakeargs=(
+		-DBUILD_SHARED_LIBS=$(usex static-libs OFF ON)
+		-DOPTION_BUILD_DOCS=$(usex doc)
+		-DOPTION_BUILD_EXAMPLES=$(usex examples)
+		-DOPTION_BUILD_SSH_BACKEND=$(usex ssh)
+		-DOPTION_BUILD_TESTS=$(usex tests)
+	)
+
 	cmake-utils_src_configure
 }
 
@@ -51,7 +63,7 @@ src_install() {
 	cmake-utils_src_install
 
 # fix multilib-strict QA failures
-#	mv "${ED%/}"/usr/{lib,$(get_libdir)} || die
+	mv "${ED%/}"/usr/{lib,$(get_libdir)} || die
 }
 
 #pkg_postinst() {
