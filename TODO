@@ -3,5 +3,7 @@
 * Update project descriptions
 * Tell cmake spedifically not to build what is not activated by use flags
   * cppassist with test has optional support for python -> add python flag?
+  * glbinding with python use live xml file?
 
-* Add software versions
+* Add software versions for gloperate, glkernel and openll (and live version mask)
+* Add default use flags
