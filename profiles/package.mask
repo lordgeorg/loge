@@ -1,9 +1,13 @@
 # live versions, those can really give you a hard time
-=dev-cpp/cppassist-9999
-=dev-cpp/cpplocate-9999
-=dev-cpp/cppexpose-9999
-=dev-cpp/cppfs-9999
-=media-libs/glbinding-9999
-=media-libs/globjects-9999
-=media-libs/glraw-9999
-=media-libs/qmltoolbox-9999
+>=dev-cpp/cppassist-9999
+>=dev-cpp/cpplocate-9999
+>=dev-cpp/cppexpose-9999
+>=dev-cpp/cppfs-9999
+>=media-libs/glbinding-9999
+>=media-libs/globjects-9999
+#>=media-libs/gloperate-9999
+>=media-libs/glraw-9999
+#>=media-libs/qmltoolbox-9999
+#>=media-libs/openll-9999
+#>=media-libs/glkernel-9999
+
