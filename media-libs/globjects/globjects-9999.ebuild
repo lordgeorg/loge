@@ -21,7 +21,7 @@ RDEPEND="
 	examples? ( dev-cpp/cpplocate:* glfw? ( >=media-libs/glfw-3.2:* ) qt5? ( >=dev-qt/qtcore-5.1:5 >=dev-qt/qtgui-5.1:5 >=dev-qt/qtwidgets-5.1:5 ) )"
 DEPEND="${RDEPEND}
 	>=dev-util/cmake-3.0:*
-	doc? ( >=app-doc/doxygen-1.8:* )"
+	doc? ( >=app-doc/doxygen-1.8:*[dot] )"
 
 EGIT_REPO_URI="https://github.com/cginternals/globjects.git"
 EGIT_BRANCH="master"
@@ -35,7 +35,7 @@ CMAKE_MAKEFILE_GENERATOR="emake"
 
 src_prepare() {
 	# user patches:
-	epatch "${FILESDIR}/${PV}/version-9999.patch"
+	epatch "${FILESDIR}/version-9999.patch"
 
 	# already includes epatch_user:
 	cmake-utils_src_prepare
