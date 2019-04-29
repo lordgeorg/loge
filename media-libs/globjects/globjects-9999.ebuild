@@ -16,7 +16,7 @@ IUSE="examples doc glfw qt5 static-libs tests"
 
 #TODO cpplocate
 RDEPEND="
-	media-libs/glbinding:*
+	>=media-libs/glbinding-3.1.0:*
 	>media-libs/glm-0.9:*
 	examples? ( dev-cpp/cpplocate:* glfw? ( >=media-libs/glfw-3.2:* ) qt5? ( >=dev-qt/qtcore-5.1:5 >=dev-qt/qtgui-5.1:5 >=dev-qt/qtwidgets-5.1:5 ) )"
 DEPEND="${RDEPEND}
