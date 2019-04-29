@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -36,7 +36,7 @@ CMAKE_MAKEFILE_GENERATOR="emake"
 
 src_prepare() {
 	# user patches:
-	epatch "${FILESDIR}/${PV}/version-9999.patch"
+	epatch "${FILESDIR}/version-9999.patch"
 
 	# already includes epatch_user:
 	cmake-utils_src_prepare
