@@ -16,7 +16,7 @@ IUSE="examples doc glfw qt5 static-libs tests"
 
 #TODO cpplocate
 RDEPEND="
-	>=media-libs/glbinding-3.1.0:*
+	media-libs/glbinding:*
 	>media-libs/glm-0.9:*
 	examples? ( dev-cpp/cpplocate:* glfw? ( >=media-libs/glfw-3.2:* ) qt5? ( >=dev-qt/qtcore-5.1:5 >=dev-qt/qtgui-5.1:5 >=dev-qt/qtwidgets-5.1:5 ) )"
 DEPEND="${RDEPEND}
@@ -25,8 +25,7 @@ DEPEND="${RDEPEND}
 
 EGIT_REPO_URI="https://github.com/cginternals/globjects.git"
 EGIT_BRANCH="master"
-# not set so that smart-live-rebuild recognize this package as a live one
-#EGIT_COMMIT="HEAD"
+EGIT_COMMIT="v1.1.0"
 EGIT_SUBMODULES=( '*' )
 
 #CONFIG_CHECK=""
@@ -35,7 +34,7 @@ CMAKE_MAKEFILE_GENERATOR="emake"
 
 src_prepare() {
 	# user patches:
-	epatch "${FILESDIR}/version-9999.patch"
+	epatch "${FILESDIR}/compatibility-to-glibindings-3.patch"
 
 	# already includes epatch_user:
 	cmake-utils_src_prepare

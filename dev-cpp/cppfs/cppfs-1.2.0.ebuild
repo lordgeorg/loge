@@ -5,29 +5,25 @@ EAPI=6
 
 inherit git-r3 cmake-utils
 
-DESCRIPTION="QML item library for cross-platform graphics applications"
-HOMEPAGE="https://github.com/cginternals/qmltoolbox"
+DESCRIPTION="Cross-platform C++ file system library supporting multiple backends"
+HOMEPAGE="https://github.com/cginternals/cppfs"
 #SRC_URI=""
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="examples doc static-libs"
+IUSE="doc examples ssh static-libs tests"
 
 RDEPEND="
-	dev-cpp/cpplocate:*
-	>media-libs/glm-0.9:*
-	>=dev-qt/qtcore-5.4:5
-	>=dev-qt/qtdeclarative-5.4:5
-	examples? ( >=dev-qt/qtgui-5.4:5 >=dev-qt/qtwidgets-5.4:5 )"
+	examples? ( dev-cpp/cppassist:* )
+	ssh? ( net-libs/libssh2 dev-libs/openssl:* sys-libs/zlib:* )"
 DEPEND="${RDEPEND}
-	>=dev-util/cmake-3.0:*
+	>=dev-util/cmake-3.0
 	doc? ( >=app-doc/doxygen-1.8:* )"
 
-EGIT_REPO_URI="https://github.com/cginternals/qmltoolbox.git"
+EGIT_REPO_URI="https://github.com/cginternals/cppfs.git"
 EGIT_BRANCH="master"
-# not set so that smart-live-rebuild recognize this package as a live one
-#EGIT_COMMIT="HEAD"
+EGIT_COMMIT="v1.2.0"
 EGIT_SUBMODULES=( '*' )
 
 #CONFIG_CHECK=""
@@ -36,13 +32,20 @@ CMAKE_MAKEFILE_GENERATOR="emake"
 
 src_prepare() {
 	# user patches:
-	epatch "${FILESDIR}/version-9999.patch"
 
 	# already includes epatch_user:
 	cmake-utils_src_prepare
 }
 
 src_configure() {
+	local mycmakeargs=(
+		-DBUILD_SHARED_LIBS=$(usex static-libs OFF ON)
+		-DOPTION_BUILD_DOCS=$(usex doc)
+		-DOPTION_BUILD_EXAMPLES=$(usex examples)
+		-DOPTION_BUILD_SSH_BACKEND=$(usex ssh)
+		-DOPTION_BUILD_TESTS=$(usex tests)
+	)
+
 	cmake-utils_src_configure
 }
 
