@@ -19,9 +19,9 @@ RDEPEND="
 	dev-cpp/cppassist:*
 	dev-cpp/cpplocate:*
 	media-libs/glkernel:*
-	>=media-libs/glbinding-1.0.0:*
+	>=media-libs/glbinding-3.0.0:*
 	>=media-libs/glm-0.9.9:*
-	>=media-libs/globjects-0.3.2:*
+	>media-libs/globjects-1.1.0:*
 	media-libs/openll:*
 	>media-libs/qmltoolbox-1.1.0:*
 	glfw? ( >=media-libs/glfw-3.1:* )
@@ -45,7 +45,7 @@ CMAKE_MAKEFILE_GENERATOR="emake"
 
 src_prepare() {
 	# user patches:
-	epatch "${FILESDIR}/${PV}/version-9999.patch"
+	epatch "${FILESDIR}/version-9999.patch"
 
 	# already includes epatch_user:
 	cmake-utils_src_prepare
