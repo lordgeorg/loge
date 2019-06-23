@@ -14,9 +14,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc static-libs tests"
 
-RDEPEND="
-	tests? ( >=dev-cpp/gtest-1.8.0:* <dev-cpp/gtest-1.9.1:* )"
-DEPEND="${RDEPEND}"
+RDEPEND=""
+DEPEND="${RDEPEND}
+	>=dev-util/cmake-3.0
+	doc? ( >=app-doc/doxygen-1.8:*[dot] )"
 
 EGIT_REPO_URI="https://github.com/cginternals/cpplocate.git"
 EGIT_BRANCH="master"
@@ -28,8 +29,7 @@ EGIT_SUBMODULES=( '*' )
 CMAKE_MAKEFILE_GENERATOR="emake"
 
 PATCHES=(
-	"${FILESDIR}/1_ext_gtest_gmock.patch"
-	"${FILESDIR}/2_lib-${ARCH}.patch"
+	"${FILESDIR}/1_lib-${ARCH}.patch"
 )
 
 src_prepare() {
@@ -38,6 +38,8 @@ src_prepare() {
 
 src_configure() {
 	local mycmakeargs=(
+		-DCMAKE_CXX_FLAGS:STRING=-Wno-error=deprecated-copy
+
 		-DOPTION_BUILD_DOCS=$(usex doc)
 		-DOPTION_BUILD_TESTS=$(usex tests)
 		-DBUILD_SHARED_LIBS=$(usex static-libs OFF ON)

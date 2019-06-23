@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -20,7 +20,7 @@ RDEPEND="
 	examples? ( dev-cpp/cpplocate:* >=media-libs/glfw-3.2:* )"
 DEPEND="${RDEPEND}
 	>=dev-util/cmake-3.0
-	doc? ( >=app-doc/doxygen-1.8:* )
+	doc? ( >=app-doc/doxygen-1.8:*[dot] )
 	cppcheck? ( dev-util/cppcheck:* )"
 
 EGIT_REPO_URI="https://github.com/cginternals/glbinding.git"
@@ -33,16 +33,20 @@ EGIT_SUBMODULES=( '*' )
 
 CMAKE_MAKEFILE_GENERATOR="emake"
 
-src_prepare() {
-	# user patches:
-	epatch "${FILESDIR}/version-9999.patch"
+PATCHES=(
+	"${FILESDIR}/0_version-9999.patch"
+	"${FILESDIR}/1_lib-${ARCH}.patch"
+)
 
-	# already includes epatch_user:
+src_prepare() {
 	cmake-utils_src_prepare
 }
 
 src_configure() {
 	local mycmakeargs=(
+#TODO remove when possible
+		-DCMAKE_CXX_FLAGS:STRING=-Wno-error=deprecated-copy
+
 		-DOPTION_BUILD_CHECK=$(usex cppcheck)
 		-DOPTION_BUILD_TOOLS=$(usex tools)
 		-DOPTION_BUILD_EXAMPLES=$(usex examples)
@@ -65,10 +69,4 @@ src_test() {
 
 src_install() {
 	cmake-utils_src_install
-
-# fix multilib-strict QA failures
-	mv "${ED%/}"/usr/{lib,$(get_libdir)} || die
 }
-
-#pkg_postinst() {
-#}
