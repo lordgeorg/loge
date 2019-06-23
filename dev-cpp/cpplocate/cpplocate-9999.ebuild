@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc static-libs tests"
 
 RDEPEND="
-	tests? ( >=dev-cpp/gtest-1.8.0:* )"
+	tests? ( >=dev-cpp/gtest-1.8.0:* <dev-cpp/gtest-1.9.1:* )"
 DEPEND="${RDEPEND}"
 
 EGIT_REPO_URI="https://github.com/cginternals/cpplocate.git"
@@ -28,12 +28,13 @@ EGIT_SUBMODULES=( '*' )
 
 CMAKE_MAKEFILE_GENERATOR="emake"
 
-src_prepare() {
-	# user patches:
-	epatch "${FILESDIR}/0_version-9999.patch"
-	epatch "${FILESDIR}/1_ext_gtest_gmock.patch"
+PATCHES=(
+	"${FILESDIR}/0_version-9999.patch"
+	"${FILESDIR}/1_ext_gtest_gmock.patch"
+	"${FILESDIR}/2_lib-${ARCH}.patch"
+)
 
-	# already includes epatch_user:
+src_prepare() {
 	cmake-utils_src_prepare
 }
 
@@ -57,10 +58,4 @@ src_test() {
 
 src_install() {
 	cmake-utils_src_install
-
-# fix multilib-strict QA failures
-	mv "${ED%/}"/usr/{lib,$(get_libdir)} || die
 }
-
-#pkg_postinst() {
-#}

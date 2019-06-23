@@ -1,12 +1,3 @@
-From 074530556a95bbe38b70e14ac1ee58b01dba0491 Mon Sep 17 00:00:00 2001
-From: lordgeorg <lordgeorg@googlemail.com>
-Date: Sat, 25 Aug 2018 11:16:53 +0200
-Subject: [PATCH] Set version to 9999
-
----
- CMakeLists.txt | 17 ++++++++---------
- 1 file changed, 8 insertions(+), 9 deletions(-)
-
 diff --git a/CMakeLists.txt b/CMakeLists.txt
 index e09d07d..542aaa2 100644
 --- a/CMakeLists.txt
@@ -45,6 +36,3 @@ index e09d07d..542aaa2 100644
 +install(FILES AUTHORS   DESTINATION ${INSTALL_ROOT} COMPONENT runtime)
 +install(FILES LICENSE   DESTINATION ${INSTALL_ROOT} COMPONENT runtime)
 +install(FILES README.md DESTINATION ${INSTALL_ROOT} COMPONENT runtime)
--- 
-2.20.1
-
