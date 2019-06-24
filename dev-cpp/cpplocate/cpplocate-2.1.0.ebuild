@@ -30,6 +30,7 @@ CMAKE_MAKEFILE_GENERATOR="emake"
 
 PATCHES=(
 	"${FILESDIR}/1_lib-${ARCH}.patch"
+	"${FILESDIR}/2_docs-path.patch"
 )
 
 src_prepare() {
@@ -38,11 +39,17 @@ src_prepare() {
 
 src_configure() {
 	local mycmakeargs=(
-		-DCMAKE_CXX_FLAGS:STRING=-Wno-error=deprecated-copy
+		$(usex tests "-DCMAKE_CXX_FLAGS:STRING=-Wno-error=deprecated-copy" "")
 
 		-DOPTION_BUILD_DOCS=$(usex doc)
 		-DOPTION_BUILD_TESTS=$(usex tests)
 		-DBUILD_SHARED_LIBS=$(usex static-libs OFF ON)
+
+#deactivating optional find_package calls
+		-DCMAKE_DISABLE_FIND_PACKAGE_cppcheck=TRUE
+		-DCMAKE_DISABLE_FIND_PACKAGE_clang_tidy=TRUE
+		$(usex tests "-DCMAKE_DISABLE_FIND_PACKAGE_Threads=TRUE" "")
+		$(usex tests "-DCMAKE_DISABLE_FIND_PACKAGE_PythonInterp=TRUE" "")
 	)
 
 	cmake-utils_src_configure
