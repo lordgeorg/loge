@@ -11,7 +11,7 @@ cppexpose is a C++11 library that provides tools for introspection of types, pro
   </longdescription>
 
   <use>
-     <flag name="c++11">Use c++11 stdregex instead of boost implementation</flag>
+     <flag name="boost">Use boost::regex instead of std::regex</flag>
      <flag name="doc">Create and install doxygen documentation</flag>
      <flag name="examples">Build and install examples</flag>
      <flag name="tests">Build and perform tests</flag>

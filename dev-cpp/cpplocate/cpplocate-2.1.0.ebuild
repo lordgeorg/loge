@@ -28,8 +28,7 @@ EGIT_SUBMODULES=( '*' )
 
 CMAKE_MAKEFILE_GENERATOR="emake"
 
-PATCHES=(
-	"${FILESDIR}/1_lib-${ARCH}.patch"
+PATCHES=("${FILESDIR}/1_lib-${ARCH}.patch"
 	"${FILESDIR}/2_docs-path.patch"
 )
 

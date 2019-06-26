@@ -11,16 +11,22 @@ HOMEPAGE="https://glbinding.org/"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="boost cppcheck doc examples glew glfw minimal qt5 static-libs tests tools"
+IUSE="boost cppcheck doc examples external-khr glew glfw minimal qt5 static-libs tests tools"
 REQUIRED_USE="glfw? ( || ( tools examples ) )
 	glew? ( examples )
 	minimal? ( !cppcheck !doc !examples !tests !tools )
 	qt5? ( examples )"
 
-RDEPEND="examples? ( dev-cpp/cpplocate:* media-libs/mesa:* )
+RDEPEND="boost? ( dev-libs/boost:* )
+	examples? ( dev-cpp/cpplocate:*
+		media-libs/mesa:* )
+	!external-khr? ( !!media-libs/mesa:* )
+	external-khr? ( media-libs/mesa:* )
 	glew? ( >=media-libs/glew-1.6:* )
 	glfw? ( >=media-libs/glfw-3.2:* )
-	qt5? ( >=dev-qt/qtcore-5.1:5 >=dev-qt/qtgui-5.1:5 >=dev-qt/qtwidgets-5.1:5 )"
+	qt5? ( >=dev-qt/qtcore-5.1:5
+		>=dev-qt/qtgui-5.1:5
+		>=dev-qt/qtwidgets-5.1:5 )"
 DEPEND="${RDEPEND}
 	>=dev-util/cmake-3.0
 	doc? ( >=app-doc/doxygen-1.8:*[dot] )
@@ -35,8 +41,7 @@ EGIT_SUBMODULES=( '*' )
 
 CMAKE_MAKEFILE_GENERATOR="emake"
 
-PATCHES=(
-	"${FILESDIR}/1_lib-${ARCH}.patch"
+PATCHES=("${FILESDIR}/1_lib-${ARCH}.patch"
 	"${FILESDIR}/2_docs-path.patch"
 )
 

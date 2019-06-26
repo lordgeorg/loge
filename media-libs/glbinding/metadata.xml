@@ -15,6 +15,7 @@
      <flag name="cppcheck">Enables source code check targets</flag>
      <flag name="doc">Build doxygen documentation</flag>
      <flag name="examples">Build and install examples</flag>
+     <flag name="external-khr">Use KHR from mesa to avoid file collisions of KHR/khrplatform.h</flag>
      <flag name="glew">Build example app with performance comparison between both binding libs</flag>
      <flag name="glfw">Build glfw examples and/or tools</flag>
      <flag name="qt5">Build qt5-based example</flag>

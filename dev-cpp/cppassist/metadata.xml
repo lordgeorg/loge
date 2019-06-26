@@ -13,6 +13,7 @@ everyone using C++. cppassist is a cross-platform library licenced under the MIT
   </longdescription>
 
   <use>
+     <flag name="boost">Use boost::regex instead of std::regex</flag>
      <flag name="doc">Create and install doxygen documentation</flag>
      <flag name="examples">Build and install examples</flag>
      <flag name="tests">Build and run unit tests</flag>

@@ -1,0 +1,26 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 7290edd..dce7579 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -139,8 +139,8 @@ if(UNIX AND SYSTEM_DIR_INSTALL)
+     set(INSTALL_DATA      "share/${project}")         # /usr/[local]/share/<project>
+     set(INSTALL_BIN       "bin")                      # /usr/[local]/bin
+     set(INSTALL_PLUGINS   "share/${project}/plugins") # /usr/[local]/share/<project>/plugins
+-    set(INSTALL_SHARED    "lib")                      # /usr/[local]/lib
+-    set(INSTALL_LIB       "lib")                      # /usr/[local]/lib
++    set(INSTALL_SHARED    "lib64")                      # /usr/[local]/lib
++    set(INSTALL_LIB       "lib64")                      # /usr/[local]/lib
+     set(INSTALL_INCLUDE   "include")                  # /usr/[local]/include
+     set(INSTALL_DOC       "share/doc/${project}")     # /usr/[local]/share/doc/<project>
+     set(INSTALL_SHORTCUTS "share/applications")       # /usr/[local]/share/applications
+@@ -154,8 +154,8 @@ else()
+     set(INSTALL_DATA      ".")                        # ./
+     set(INSTALL_BIN       ".")                        # ./
+     set(INSTALL_PLUGINS   "plugins")                  # ./plugins
+-    set(INSTALL_SHARED    "lib")                      # ./lib
+-    set(INSTALL_LIB       "lib")                      # ./lib
++    set(INSTALL_SHARED    "lib64")                      # ./lib
++    set(INSTALL_LIB       "lib64")                      # ./lib
+     set(INSTALL_INCLUDE   "include")                  # ./include
+     set(INSTALL_DOC       "doc")                      # ./doc
+     set(INSTALL_SHORTCUTS "misc")                     # ./misc
