@@ -14,7 +14,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc static-libs tests"
 REQUIRED_USE=""
 
-RDEPEND=">=dev-qt/qtcore-5.1:5
+RDEPEND="media-libs/mesa:*
+	>=dev-qt/qtcore-5.1:5
 	>=dev-qt/qtgui-5.1:5
 	>=dev-qt/qtwidgets-5.1:5
 	>=dev-qt/qtopengl-5.1:5"
@@ -24,7 +25,6 @@ DEPEND="${RDEPEND}
 
 EGIT_REPO_URI="https://github.com/cginternals/glraw.git"
 EGIT_BRANCH="master"
-# not set so that smart-live-rebuild recognize this package as a live one
 #EGIT_COMMIT="HEAD"
 EGIT_SUBMODULES=( '*' )
 

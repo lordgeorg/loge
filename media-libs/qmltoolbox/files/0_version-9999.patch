@@ -1,14 +1,5 @@
-From 3ab5311ef3df255b0f2984578013ca21cecab316 Mon Sep 17 00:00:00 2001
-From: lordgeorg <lordgeorg@googlemail.com>
-Date: Thu, 22 Feb 2018 15:18:17 +0100
-Subject: [PATCH] Version to 9999
-
----
- CMakeLists.txt | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
-
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 979668f..1642fbc 100644
+index 55dc0f1..4d1cf57 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -54,11 +54,11 @@ set(META_PROJECT_DESCRIPTION "QML item library for cross-platform graphics appli
@@ -26,6 +17,3 @@ index 979668f..1642fbc 100644
  set(META_NAME_VERSION        "${META_PROJECT_NAME} v${META_VERSION} (${META_VERSION_REVISION})")
  set(META_CMAKE_INIT_SHA      "6a6f30b38a1cee31ccac3f091816f28e0f6bce4b")
  
--- 
-2.18.0
-

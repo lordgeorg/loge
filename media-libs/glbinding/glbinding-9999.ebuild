@@ -34,11 +34,8 @@ DEPEND="${RDEPEND}
 
 EGIT_REPO_URI="https://github.com/cginternals/glbinding.git"
 EGIT_BRANCH="master"
-# not set so that smart-live-rebuild recognizes this package as a live one
 #EGIT_COMMIT="HEAD"
 EGIT_SUBMODULES=( '*' )
-
-#CONFIG_CHECK=""
 
 CMAKE_MAKEFILE_GENERATOR="emake"
 

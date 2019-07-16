@@ -1,0 +1,15 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 55dc0f1..bfe3e7c 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -138,8 +138,8 @@ if(UNIX AND SYSTEM_DIR_INSTALL)
+     set(INSTALL_EXAMPLES  "share/${project}")       # /usr/[local]/share/<project>
+     set(INSTALL_DATA      "share/${project}")       # /usr/[local]/share/<project>
+     set(INSTALL_BIN       "bin")                    # /usr/[local]/bin
+-    set(INSTALL_SHARED    "lib")                    # /usr/[local]/lib
+-    set(INSTALL_LIB       "lib")                    # /usr/[local]/lib
++    set(INSTALL_SHARED    "lib64")                    # /usr/[local]/lib
++    set(INSTALL_LIB       "lib64")                    # /usr/[local]/lib
+     set(INSTALL_INCLUDE   "include")                # /usr/[local]/include
+     set(INSTALL_DOC       "share/doc/${project}")   # /usr/[local]/share/doc/<project>
+     set(INSTALL_SHORTCUTS "share/applications")     # /usr/[local]/share/applications
