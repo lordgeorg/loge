@@ -1,4 +1,9 @@
-# live versions, those can really give you a hard time
+# mask live versions, since those can really give you a hard time
+# * not masked if there is no versioned ebuild (yet):
+#       glkernel, openll, gloperate
+# * and/or there is no versioned ebuild of a package in this repository that could
+#   be build without the live ebuild:
+#       qmltoolbox, globjects
 >=dev-cpp/cppassist-9999
 >=dev-cpp/cpplocate-9999
 >=dev-cpp/cppexpose-9999
@@ -10,4 +15,3 @@
 #>=media-libs/qmltoolbox-9999
 #>=media-libs/openll-9999
 #>=media-libs/glkernel-9999
-

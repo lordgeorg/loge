@@ -1,9 +1,10 @@
-* Add all cmake options (package specific: OPTION_[...])
+* Update project descriptions (from online text)
 
-* Update project descriptions
-* Tell cmake spedifically not to build what is not activated by use flags
-  * cppassist with test has optional support for python -> add python flag?
-  * glbinding with python use live xml file?
+* globjects ignores my use flags
 
-* Add software versions for gloperate, glkernel and openll (and live version mask)
-* Add default use flags
+* glbinding may use live gl.xml? how?
+* make external-khr working for glbinding (collision with mesa)
+  * include FindKHR.cmake (https://github.com/cginternals/glesbinding-poc/blob/master/cmake/FindKHR.cmake)
+  * don't install KHR ... or better: delete it via patch
+
+* use packages for versioned ebuilds instead of git
