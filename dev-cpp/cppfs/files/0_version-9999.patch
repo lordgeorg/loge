@@ -16,7 +16,7 @@ index ea9fd15..d9642ad 100644
  set(META_AUTHOR_DOMAIN       "https://github.com/cginternals/cppfs/")
  set(META_AUTHOR_MAINTAINER   "opensource@cginternals.com")
 -set(META_VERSION_MAJOR       "1")
--set(META_VERSION_MINOR       "2")
+-set(META_VERSION_MINOR       "3")
 +set(META_VERSION_MAJOR       "9999")
 +set(META_VERSION_MINOR       "0")
  set(META_VERSION_PATCH       "0")
