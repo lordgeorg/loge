@@ -7,7 +7,6 @@ inherit git-r3 cmake-utils
 
 DESCRIPTION="C++ library for pre-computing noise, and random sample-kernels"
 HOMEPAGE="https://github.com/cginternals/glkernel"
-#SRC_URI=""
 
 LICENSE="MIT"
 SLOT="0"

@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 42760d0..535c29b 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -130,7 +130,7 @@ else()
+     set(INSTALL_SHARED    "lib")                  # /usr/[local]/lib
+     set(INSTALL_LIB       "lib")                  # /usr/[local]/lib
+     set(INSTALL_INCLUDE   "include")              # /usr/[local]/include
+-    set(INSTALL_DOC       "share/doc/${project}") # /usr/[local]/share/doc/<project>
++    set(INSTALL_DOC       "share/doc/${project}-${META_VERSION}") # /usr/[local]/share/doc/<project>
+     set(INSTALL_SHORTCUTS "share/applications")   # /usr/[local]/share/applications
+     set(INSTALL_ICONS     "share/pixmaps")        # /usr/[local]/share/pixmaps
+     set(INSTALL_INIT      "/etc/init")            # /etc/init (upstart init scripts)

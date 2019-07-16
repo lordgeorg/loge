@@ -1,12 +1,3 @@
-From 46ff674d78543ba46514766be62c36e8685e177e Mon Sep 17 00:00:00 2001
-From: lordgeorg <lordgeorg@googlemail.com>
-Date: Sun, 13 May 2018 15:13:37 +0200
-Subject: [PATCH] Set version to 9999
-
----
- CMakeLists.txt | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
-
 diff --git a/CMakeLists.txt b/CMakeLists.txt
 index 26dafa6..23a0c51 100644
 --- a/CMakeLists.txt
@@ -26,6 +17,3 @@ index 26dafa6..23a0c51 100644
  set(META_NAME_VERSION        "${META_PROJECT_NAME} v${META_VERSION} (${META_VERSION_REVISION})")
  
  
--- 
-2.17.0
-

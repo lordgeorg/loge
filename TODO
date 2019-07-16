@@ -10,3 +10,5 @@
 * use packages for versioned ebuilds instead of git
 
 * add glhimmel
+
+* actually run the tests if USE flag tests is set
